@@ -1,0 +1,8 @@
+The template method is about encapsulating algorithms (collection of functions) so that subclasses can hook themselves into the a computation when they need to. The template method is contained in an abstract class, as well as the abstract versions of the operations in the template method.
+The concrete class has to implement the operations required by the template method.
+
+The template method defines the sequence of the methods, i.e. the algorithm. Those methods which are abstract, must be implemented by the concrete class. We can also include hooks, empty (concrete) methods in the abstract class, which subclasses can implement freely if they choose to.
+
+The Template Method relates to a design principle called the Hollywood principle, in which higher level components are meant to call/use lower level components or subclasses, and not the other way around. In the case of the Template Method, the higher level component (AbstractClass) calls on the subclass (ConcreteClass) to provide the implementation for the algorithm.
+
+As an example, the Template Method can be used to implement different types of sorting algorithms (insertion, selection, merge sort, etc.) all derived from a shared abstract class, which details the sequence of the algorithm, but leaves the implementation details to the subclasses.
