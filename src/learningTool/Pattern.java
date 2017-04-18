@@ -5,6 +5,15 @@
  */
 package learningTool;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
@@ -13,10 +22,33 @@ import java.util.ArrayList;
  */
 public abstract class Pattern {
     
+    public String path;
     
-    private String getFileContent(String path){return path;}
+    
+    /*private String getFileContent(String path) throws FileNotFoundException, IOException{
+        try (BufferedReader br = new BufferedReader(new FileReader("input.txt"))) {
+            String line;
+        while ((line = br.readLine()) != null) {
+                bw.write(line);
+                bw.newLine();
+            }
+        }
+        bw.close();
+        return path;
+    }*/
+    
+    static String readFile(String path) throws IOException {
+    byte[] encoded = Files.readAllBytes(Paths.get(path));
+    return new String(encoded); 
+    }
+    
     private String getMethod(String method){return method;}
-    private String getDescription(String description){return description;}
+    
+    public String getDescription() throws IOException {
+        String des = readFile(path);
+        return des;
+    }
+    
     private String getUML(String uml){return uml;}
     private ArrayList getSourceFiles(ArrayList sourceFiles){return sourceFiles;}
 }
