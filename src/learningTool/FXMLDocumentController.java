@@ -11,7 +11,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TabPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -19,14 +23,19 @@ import javafx.scene.control.Label;
  */
 public class FXMLDocumentController implements Initializable {
     
-    @FXML
     private Label label;
-    
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+    private AnchorPane menuSection;
+    @FXML
+    private AnchorPane patternSection;
+    @FXML
+    private TabPane patternCode;
+    @FXML
+    private Label patternName;
+    @FXML
+    private Button patternUMLButton;
+    @FXML
+    private Text patternDescription;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
