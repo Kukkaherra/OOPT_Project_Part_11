@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -21,34 +22,34 @@ import java.util.ArrayList;
  * @author MyMac
  */
 public abstract class Pattern {
+ 
     
-    public String path;
+	public Pattern() {
+	}
     
-    
-    /*private String getFileContent(String path) throws FileNotFoundException, IOException{
-        try (BufferedReader br = new BufferedReader(new FileReader("input.txt"))) {
-            String line;
-        while ((line = br.readLine()) != null) {
-                bw.write(line);
-                bw.newLine();
-            }
-        }
-        bw.close();
-        return path;
-    }*/
-    
-    static String readFile(String path) throws IOException {
-    byte[] encoded = Files.readAllBytes(Paths.get(path));
-    return new String(encoded); 
+    public String readFile(String path) {
+		String content = null;
+		try {
+			content = new String(Files.readAllBytes(Paths.get(path)));
+		} catch (IOException e) {
+			System.err.print(e);
+		}
+		return content; 
     }
     
-    private String getMethod(String method){return method;}
+    public String getMethod(){
+		throw new UnsupportedOperationException();
+	}
+	
+	public String getDescription(){
+		throw new UnsupportedOperationException();
+	}
     
-    public String getDescription() throws IOException {
-        String des = readFile(path);
-        return des;
-    }
-    
-    private String getUML(String uml){return uml;}
-    private ArrayList getSourceFiles(ArrayList sourceFiles){return sourceFiles;}
+    public String getUML(){
+		throw new UnsupportedOperationException();
+	}
+	
+    public ArrayList getSourceFiles() {
+		throw new UnsupportedOperationException();
+	}
 }
