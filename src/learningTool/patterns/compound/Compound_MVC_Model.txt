@@ -1,4 +1,3 @@
-package compound;
 public class Compound_MVC_Model {
     private String name;
     private String password;

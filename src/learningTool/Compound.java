@@ -21,4 +21,9 @@ public class Compound extends Pattern {
     public String getDescription() {
        return description;
     }
+    
+    @Override
+    public String toString() {
+        return "Compound";
+    }
 }

@@ -1,4 +1,3 @@
-package compound;
 public class Compound_MVC_Controller {
     private Compound_MVC_View theView;
     private Compound_MVC_Model theModel;

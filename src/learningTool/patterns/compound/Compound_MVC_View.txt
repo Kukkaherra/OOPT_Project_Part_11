@@ -1,4 +1,3 @@
-package compound;
 import java.util.Scanner;
 
 public class Compound_MVC_View {
