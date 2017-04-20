@@ -31,8 +31,21 @@ public class Mainclass extends Application {
      */
     public static void main(String[] args) {
 		
-		Pattern com = new Compound();
-		System.out.println(com.getDescription());
+               
+                PatternHelper ph1 = new PatternNode("Composite");
+                PatternHelper ph2 = new PatternNode("Compound");
+                PatternHelper ph3 = new PatternNode("Adapter");
+                PatternHelper comp = new PatternComposite("What pattern should I use");
+                
+                comp.add(ph1);
+                comp.add(ph2);
+                comp.add(ph3);
+                
+                PatternComposite pc = new PatternComposite("Suggest a pattern for me");
+                pc.add(comp);
+                System.out.println(pc);
+                System.out.println(pc.getChild(0));
+                System.out.println(pc.getChild(0).getChild(2));
 		
         launch(args);
     }

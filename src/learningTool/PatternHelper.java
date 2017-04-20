@@ -11,8 +11,7 @@ package learningTool;
  */
 public interface PatternHelper {
     
-    public String getPattern();
-    public void add(Pattern pattern);
-    public Pattern getChild(int i);
-    public void print();
+    public void add(PatternHelper pattern);
+    public PatternHelper getChild(int i);
+    public String toString();
 }

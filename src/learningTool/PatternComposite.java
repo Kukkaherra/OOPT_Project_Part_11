@@ -8,39 +8,40 @@ package learningTool;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
+/*
  * @author Oskari
  */
 public class PatternComposite implements PatternHelper{
     
-    private String patternName;
-    List patterns = new ArrayList();
+    private String question;
+    ArrayList<PatternHelper> childNodes = new ArrayList<>();
+    ArrayList<String> questions = new ArrayList<>();
     
-    public PatternComposite(String patternName) {
-        this.patternName = patternName;
+    public PatternComposite(String question) {
+        this.question = question;
     } 
+    
+    public String getQuestion() {
+        return question;
+    }
  
-    @Override
-    public String getPattern() {
-       return patternName;
+    public void addQuestions() {
+        questions.add(question);
+    }
+    
+    public void add(PatternHelper node) {
+       childNodes.add(node);
     }
 
     @Override
-    public void add(Pattern pattern) {
-       patterns.add(pattern);
+    public PatternHelper getChild(int i) {
+        return childNodes.get(i);
     }
 
     @Override
-    public Pattern getChild(int i) {
-        return (Pattern) patterns.get(i);
+    public String toString() {
+        return "Question: " + getQuestion();
     }
 
-    @Override
-    public void print() {
-        System.out.println("Pattern: " + getPattern());
-        
-
-    }
     
 }

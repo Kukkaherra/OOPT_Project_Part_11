@@ -5,6 +5,8 @@
  */
 package learningTool;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Oskari
@@ -17,24 +19,22 @@ public class PatternNode implements PatternHelper {
         this.patternName = patternName;
     }
 
-    @Override
     public String getPattern() {
        return patternName;
     }
-
+    
     @Override
-    public void add(Pattern pattern) {
-
-    }
-
-    @Override
-    public Pattern getChild(int i) {
+    public PatternHelper getChild(int i) {
         return null;
     }
 
+    public String toSting() {
+        return "Pattern " + getPattern();
+    }
+
     @Override
-    public void print() {
-        System.out.println("Pattern: " + getPattern());
+    public void add(PatternHelper node) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
