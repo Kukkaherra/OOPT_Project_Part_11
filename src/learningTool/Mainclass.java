@@ -33,19 +33,19 @@ public class Mainclass extends Application {
 		
                
                 PatternHelper ph1 = new PatternNode("Composite");
-                PatternHelper ph2 = new PatternNode("Compound");
-                PatternHelper ph3 = new PatternNode("Adapter");
-                PatternHelper comp = new PatternComposite("What pattern should I use");
+                PatternHelper comp1 = new PatternComposite("Composite 1");
+                PatternHelper comp2 = new PatternComposite("Composite 2");
+                PatternHelper comp21 = new PatternComposite("Composite 21");
                 
-                comp.add(ph1);
-                comp.add(ph2);
-                comp.add(ph3);
+                comp2.add(comp21);
+                comp21.add(ph1);
                 
-                PatternComposite pc = new PatternComposite("Suggest a pattern for me");
-                pc.add(comp);
-                System.out.println(pc);
-                System.out.println(pc.getChild(0));
-                System.out.println(pc.getChild(0).getChild(2));
+              
+                PatternComposite root = new PatternComposite("This is root component");
+                root.add(comp1);
+                root.add(comp2);
+                System.out.println(root.getChild(1).getChild(0).getChild(0));
+
 		
         launch(args);
     }

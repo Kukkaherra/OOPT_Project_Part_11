@@ -15,18 +15,21 @@ public class PatternComposite implements PatternHelper{
     
     private String question;
     ArrayList<PatternHelper> childNodes = new ArrayList<>();
-    ArrayList<String> questions = new ArrayList<>();
     
     public PatternComposite(String question) {
         this.question = question;
     } 
     
-    public String getQuestion() {
+    public String getData() {
         return question;
     }
- 
-    public void addQuestions() {
-        questions.add(question);
+
+    public ArrayList<String> getQuestionList() {
+        ArrayList<String> tempList = new ArrayList<>();
+        childNodes.forEach((node) -> {
+            tempList.add(node.getData());
+        });
+        return tempList;
     }
     
     public void add(PatternHelper node) {
@@ -40,8 +43,9 @@ public class PatternComposite implements PatternHelper{
 
     @Override
     public String toString() {
-        return "Question: " + getQuestion();
+        return "Question: " + getData();
     }
+
 
     
 }
