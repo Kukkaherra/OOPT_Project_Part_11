@@ -1,20 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package learningTool;
 
-/**
- *
- * @author MyMac
- */
+import java.util.ArrayList;
+
 public class Compound extends Pattern {
 	
 	private String description;
+        private static Compound instance = null;
+        private ArrayList<String> sourceFiles = new ArrayList<>();
+        
+        public static Compound getInstance() {
+            if (instance == null) {
+                instance = new Compound();
+            }
+           return instance;
+        }
     
-    public Compound() {
-		this.description = readFile("src/learningTool/description.txt");
+    private Compound() {
+	this.description = readFile("src/learningTool/description.txt");
+	this.sourceFiles.add(readFile("src/learningTool/patterns/compound/Mainclass.txt"));
+	this.sourceFiles.add(readFile("src/learningTool/patterns/compound/Compound_MVC_Controller.txt"));
+	this.sourceFiles.add(readFile("src/learningTool/patterns/compound/Compound_MVC_Model.txt"));
+	this.sourceFiles.add(readFile("src/learningTool/patterns/compound/Compound_MVC_View.txt"));
+
     }
     
 	@Override
@@ -26,4 +33,9 @@ public class Compound extends Pattern {
     public String toString() {
         return "Compound";
     }
+    
+    @Override
+    public ArrayList getSourceFiles() {
+		return sourceFiles;
+	}
 }

@@ -94,7 +94,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void selectPattern() throws IOException {
         clearTabs();
-        Pattern com = new Compound();
+        Pattern com = Compound.getInstance();
+
         // Mockuppia varten tässä, loppuversiossa lista ei oo stringejä, vaan näitä olioita.
         
         selectedPattern = patternList.getSelectionModel().getSelectedItem();
