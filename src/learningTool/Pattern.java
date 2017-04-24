@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public abstract class Pattern {
  
     
-	public Pattern() {
-	}
+    public Pattern() {
+    }
     
     public String readFile(String path) {
 		String content = null;
