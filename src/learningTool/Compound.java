@@ -44,7 +44,7 @@ public class Compound extends Pattern {
     }
 
     @Override
-    public ArrayList getSourceFiles() {
+    public ArrayList<DataTuple> getSourceFiles() {
         return sourceFiles;
     }
     

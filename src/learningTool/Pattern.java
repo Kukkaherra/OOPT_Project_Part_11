@@ -34,7 +34,7 @@ public abstract class Pattern {
 		throw new UnsupportedOperationException();
 	}
 	
-    public ArrayList getSourceFiles() {
+    public ArrayList<DataTuple> getSourceFiles() {
 		throw new UnsupportedOperationException();
 	}
 }
