@@ -6,6 +6,7 @@ package learningTool;
  * and open the template in the editor.
  */
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,9 +23,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Separator;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -131,9 +135,16 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void UMLButtonAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("UML.fxml"));
+        
+        // Separate FXML for uml is now unnecessary
+        
+        // Replace this with selected pattern's getUML-method once implemented.
+        // Could be for example: File file = selectedPattern.getInstance().getUML();
+        File file = new File("src/learningTool/patterns/compound/uml.png");
+        Image img = new Image(file.toURI().toString());
+        
         Stage stage = new Stage();
-        stage.setScene(new Scene(loader.load()));
+        stage.setScene(new Scene(new Pane(new ImageView(img))));
         stage.show();
     }
     

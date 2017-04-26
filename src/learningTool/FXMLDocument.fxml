@@ -13,35 +13,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learningTool.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learningTool.FXMLDocumentController">
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
    <children>
-      <SplitPane dividerPositions="0.29797979797979796" layoutX="315.0" layoutY="180.0" prefHeight="639.0" prefWidth="999.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.30501535312180145" layoutX="315.0" layoutY="180.0" prefHeight="639.0" prefWidth="999.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane fx:id="menuSection" minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="202.0">
+          <AnchorPane fx:id="menuSection" prefHeight="158.0" prefWidth="202.0" SplitPane.resizableWithParent="false">
                <children>
-                  <SplitPane dividerPositions="0.5983739837398374" layoutX="35.0" layoutY="64.0" orientation="VERTICAL" prefHeight="617.0" prefWidth="288.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <SplitPane dividerPositions="0.5983739837398374" layoutX="35.0" layoutY="64.0" orientation="VERTICAL" prefHeight="617.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                      <AnchorPane prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <ListView fx:id="patternList" layoutX="48.0" layoutY="28.0" onMouseClicked="#selectPattern" prefHeight="337.0" prefWidth="286.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+                              <ListView fx:id="patternList" layoutX="48.0" layoutY="30.0" onMouseClicked="#selectPattern" prefHeight="335.0" prefWidth="293.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                                  <opaqueInsets>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </opaqueInsets></ListView>
-                              <Label layoutX="1.0" layoutY="-1.0" prefHeight="27.0" prefWidth="286.0" text="Select Pattern from list ..." AnchorPane.bottomAnchor="338.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
-                                  <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </padding></Label>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Label layoutX="7.0" layoutY="14.0" prefHeight="61.0" prefWidth="286.0" text="... or Answer these questions to find a suitable pattern" wrapText="true" AnchorPane.bottomAnchor="183.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Label layoutX="1.0" layoutY="-1.0" prefHeight="31.0" prefWidth="293.0" text="Select Pattern from list ..." AnchorPane.bottomAnchor="351.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
                                   <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -49,15 +38,27 @@
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </padding>
                               </Label>
-                              <ListView fx:id="questionList" layoutY="61.0" prefHeight="100.0" prefWidth="286.0" />
-                              <FlowPane fx:id="breadCrumbs" layoutY="161.0" prefHeight="83.0" prefWidth="286.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="44.0" prefWidth="293.0" text="... or Answer these questions to find a suitable pattern" wrapText="true" AnchorPane.bottomAnchor="206.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                  <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <ListView fx:id="questionList" layoutX="4.0" layoutY="44.0" prefHeight="100.0" prefWidth="286.0" />
+                              <FlowPane fx:id="breadCrumbs" layoutX="4.0" layoutY="144.0" prefHeight="100.0" prefWidth="286.0" />
                            </children>
                         </AnchorPane>
                     </items>
                   </SplitPane>
                </children>
             </AnchorPane>
-          <AnchorPane fx:id="patternSection">
+          <AnchorPane fx:id="patternSection" prefHeight="617.0" prefWidth="676.0" SplitPane.resizableWithParent="false">
                <children>
                   <Label fx:id="patternName" layoutX="14.0" layoutY="13.0" text="Select a Pattern to begin">
                      <font>
@@ -67,9 +68,9 @@
                     <tabs>
                       <Tab text="CodeTemplate">
                            <content>
-                              <ScrollPane>
+                              <ScrollPane fitToHeight="true" fitToWidth="true">
                                  <content>
-                                    <AnchorPane prefHeight="70.0" prefWidth="654.0">
+                                    <AnchorPane>
                                        <children>
                                           <Text fx:id="sourceCode" layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="638.0" />
                                        </children>
@@ -81,9 +82,9 @@
                     </tabs>
                   </TabPane>
                   <Button fx:id="patternUMLButton" disable="true" layoutX="602.0" layoutY="11.0" mnemonicParsing="false" onAction="#UMLButtonAction" text="Open UML" />
-                  <ScrollPane fitToWidth="true" layoutX="6.0" layoutY="42.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="162.0" prefWidth="670.0">
+                  <ScrollPane fitToWidth="true" layoutX="6.0" layoutY="42.0">
                     <content>
-                      <AnchorPane prefHeight="40.0" prefWidth="668.0">
+                      <AnchorPane prefHeight="165.0" prefWidth="665.0">
                            <children>
                               <Text fx:id="patternDescription" layoutX="7.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="638.0" />
                            </children>
