@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import javafx.scene.image.Image;
 
 public abstract class Pattern {
  
@@ -29,7 +30,7 @@ public abstract class Pattern {
 		throw new UnsupportedOperationException();
 	}
     
-    public String getUML(){
+    public Image getUML(){
 		throw new UnsupportedOperationException();
 	}
 	

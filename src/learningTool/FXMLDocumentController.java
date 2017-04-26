@@ -9,6 +9,7 @@ package learningTool;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -65,7 +66,10 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // The listviews in the UI use toString by default as what each item is displayed as (if it is object and not a string),
+        // so remember to override your toStrings(), and make your own ones ;)
+        
+        // TODO: Change this to ObservableList<Pattern> = model.getInstance().getPatternList();
         ObservableList<String> items = FXCollections.observableArrayList (
             "Abstract Factory",
             "Adapter",
@@ -85,6 +89,8 @@ public class FXMLDocumentController implements Initializable {
         );
         patternList.setItems(items);
         
+        // TODO: Change this to whatever the fuck the tree structure will be, possibly:
+        // ObservableList<PatternHelper> = model.getInstance().getRoot();
         ObservableList<String> questions = FXCollections.observableArrayList (
             "I need to create objects...",
             "I need to compose objects into larger structures...",
@@ -99,21 +105,16 @@ public class FXMLDocumentController implements Initializable {
     private void selectPattern() throws IOException {
         clearTabs();
         Pattern com = Compound.getInstance();
-
-        // Mockuppia varten tässä, loppuversiossa lista ei oo stringejä, vaan näitä olioita.
         
         selectedPattern = patternList.getSelectionModel().getSelectedItem();
-        patternUMLButton.setDisable(false); // Tool starts with no selected pattern after which, it is impossible to deselect
-        patternName.setText(selectedPattern);
+        patternUMLButton.setDisable(false); // Tool starts with no selected pattern; after which, it is impossible to deselect
+        patternName.setText(selectedPattern); // Can simply use: patternName.setText(selectedPattern.toString(), once everything is said and done)
         patternDescription.setText(com.getDescription());
         
-        // Tän lisäämisen voi sit lopullisessa tehä hienommin sillee että olio esim kerää omat tiedostonsa tai jotain,
-        // ja tästä vois vaan tyylii for each:lla avaa tabin joka source filulle.
-        addTab("Main", com.readFile("src/learningTool/patterns/compound/Mainclass.txt"));
-        addTab("Model", com.readFile("src/learningTool/patterns/compound/Compound_MVC_Model.txt"));
-        addTab("View", com.readFile("src/learningTool/patterns/compound/Compound_MVC_View.txt"));
-        addTab("Controller", com.readFile("src/learningTool/patterns/compound/Compound_MVC_Controller.txt"));
-        addTab("Output", "");
+        ArrayList<DataTuple> dtlist = com.getSourceFiles();
+        for (DataTuple dt : dtlist) {
+            addTab(dt.getFileName(), dt.getCode());
+        }
     }
     
     public void clearTabs() {
@@ -136,12 +137,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void UMLButtonAction(ActionEvent event) throws IOException {
         
-        // Separate FXML for uml is now unnecessary
-        
-        // Replace this with selected pattern's getUML-method once implemented.
-        // Could be for example: File file = selectedPattern.getInstance().getUML();
-        File file = new File("src/learningTool/patterns/compound/uml.png");
-        Image img = new Image(file.toURI().toString());
+        // TODO: Change this to 'selectedPattern'
+        Pattern com = Compound.getInstance();
+        Image img = com.getUML();
         
         Stage stage = new Stage();
         stage.setScene(new Scene(new Pane(new ImageView(img))));
