@@ -1,0 +1,13 @@
+Winner winner, chicken dinner!
+(Win State)
+Dun, dun, duuuun. You lost!
+(Lose State)
+You won back what you put in.
+(BreakEven State)
+==========
+The system has jammed, please call for service.
+==========
+
+This is probably your only chance...
+Leave. Leave now!
+(End State)

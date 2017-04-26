@@ -1,0 +1,39 @@
+package iteratormenu;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String args[]) {
+			BurgerKingMenu bkMenu = new BurgerKingMenu();
+			McDonaldsMenu mcdMenu = new McDonaldsMenu();
+			mcdMenu.addItem("Whopper", "It's a burger!", 3.50f);
+			mcdMenu.addItem("Double decker", "Too many layers!", 4.50f);
+			bkMenu.addItem("Cheeseburger", "It's a cheese!", 1.0f);
+			mcdMenu.removeItem(0);
+      printMenus(mcdMenu, bkMenu);
+		
+	}
+	
+	private static void printMenus(Menu mcdMenu, Menu bkMenu) {
+		
+		Iterator mcdIterator = mcdMenu.createIterator();
+        Iterator bkIterator = bkMenu.createIterator();
+		
+		int index = 1;
+        System.out.println("======= McDonald's Menu =======");
+        while (mcdIterator.hasNext()) {
+            MenuItem menuItem = (MenuItem)mcdIterator.next();
+            System.out.println(index + ". " + menuItem.toString() + "\n");
+            index++;
+        }
+
+        System.out.println("======= Burger King Menu =======");
+		index = 1;
+        while (bkIterator.hasNext()) {
+            MenuItem menuItem = (MenuItem)bkIterator.next();
+            System.out.println(index + ". " + menuItem.toString() + "\n");
+			index++;
+        }
+	}
+}

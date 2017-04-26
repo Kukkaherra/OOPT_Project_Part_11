@@ -1,0 +1,20 @@
+package proxypattern;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProxyPattern {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> studentList = new ArrayList<>();
+		studentList.add("John");
+		studentList.add("Jane");
+		
+		ProxyIntranetAccess testProxy = new ProxyIntranetAccess("John", studentList);
+		testProxy.grantIntranetAccess();
+		
+		testProxy = new ProxyIntranetAccess("Mary", studentList);
+		testProxy.grantIntranetAccess();
+	}
+}

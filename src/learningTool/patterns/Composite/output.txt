@@ -1,0 +1,3 @@
+Semicircle consists of 
+Blue circle has 0 corners and 20.0 size.
+Red rectangle has 4 corners and 16.0 size.

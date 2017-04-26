@@ -1,0 +1,2 @@
+Access granted to John
+Not a student, intranet access denied

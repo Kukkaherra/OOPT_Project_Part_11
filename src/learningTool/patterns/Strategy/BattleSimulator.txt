@@ -1,0 +1,19 @@
+package battlesimulator;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Random;
+
+public class BattleSimulator {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		Character character1 = new King();
+		Character character2 = new Knight();
+		WeaponBehaviour wb = new SwordBehavior();
+		WeaponBehaviour wb2 = new AxeBehavior();
+		character1.setWeapon(wb);
+		character2.setWeapon(wb2);
+		character1.fight();
+	}
+}

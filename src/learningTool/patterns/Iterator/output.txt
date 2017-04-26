@@ -1,0 +1,19 @@
+======= McDonald's Menu =======
+1. A triple double chicken sandwich, $4.99
+*Not real chicken
+
+2. Whopper, $3.5
+It's a burger!
+
+3. Double decker, $4.5
+Too many layers!
+
+======= Burger King Menu =======
+1. Cheeserburger, $1.0
+Perfect for cheap drunk people!
+
+2. Double cheese burger, $2.59
+Perfect for less cheap drunk people!
+
+3. Cheeseburger, $1.0
+It's a cheese!

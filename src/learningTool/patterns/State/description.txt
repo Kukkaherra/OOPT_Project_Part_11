@@ -1,0 +1,11 @@
+“The State Pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.”
+
+In the State pattern we encapsulate states into separate classes and delegate the object representing the current state, this means that behavior changes along with the internal state. When a state changes, the behaviour changes, which gives the appearance of being a different class, but in reality we’re using composition to give the appearance of a class by referencing different state objects. 
+
+The Context is the class which can have any of the internal states.
+
+The abstract class State defines a common inheritance for all the concrete states. The states all inherit the same class or implement the same interface, meaning they can be exchanged with one another.
+
+Requests can be made to the Context, in which case the request is delegated to the state to handle.
+
+The concrete states handle the requests from the context. The concrete states are derived from an interface or abstract class, but provide their own implementation for the requests. This means that when the context changes state, the behavior will change depending on the implementation in the concrete class matching that state.

@@ -1,0 +1,29 @@
+package statepattern;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Mainclass {
+
+	public static void main(String[] args) throws IOException {
+		Context context = new Context();
+
+		State winstate = new WinState();
+		State losestate = new LoseState();
+		State breakevenstate = new BreakEvenState();
+		State endstate = new EndState();
+
+		winstate.doAction(context);
+		System.out.println(context.getState().toString());
+
+		losestate.doAction(context);
+		System.out.println(context.getState().toString());
+
+		breakevenstate.doAction(context);
+		System.out.println(context.getState().toString());
+
+		endstate.doAction(context);
+		System.out.println(context.getState().toString());
+	}
+}
