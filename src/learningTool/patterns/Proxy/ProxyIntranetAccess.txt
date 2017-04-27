@@ -1,0 +1,33 @@
+package proxypattern;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
+public class ProxyIntranetAccess implements IntranetAccess {
+	
+	private String studentName;
+	private ArrayList<String> studentList;
+	private Map<String, String> studentMap;
+
+	public ProxyIntranetAccess(String studentName, ArrayList<String> studentList) {
+		this.studentName = studentName;
+		this.studentList = studentList;
+	}
+	
+	@Override
+	public void grantIntranetAccess() {
+		
+		if (getStudent()) {
+			RealIntranetAccess realIntraAccess = new RealIntranetAccess(studentName);
+			realIntraAccess.grantIntranetAccess();
+		} else {
+			System.out.println("Not a student, intranet access denied");
+		}
+	}	
+	
+	public boolean getStudent() {
+		return studentList.contains(studentName);
+	}
+}
