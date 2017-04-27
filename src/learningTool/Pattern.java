@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.stream.Stream;
 import javafx.scene.image.Image;
 
@@ -53,18 +54,21 @@ public class Pattern {
     }
     
     public void directorySearch() throws IOException {
+        File[] directories = new File("src/learningTool/patterns").listFiles(File::isDirectory);
+        for (File directory : directories) {
+            Pattern pattern = new Pattern(directory.getName());
+        }
         Stream<Path> paths = Files.walk(Paths.get("src/learningTool/patterns/"));{
         paths.forEach(filePath -> {
             if (Files.isRegularFile(filePath)) {
                 //Print Directory
-                System.out.println(filePath.getName(3));
+               // System.out.println(filePath.getName(3));
                 //Print file content
-                System.out.println(readFile(filePath.toString()));
+              //  System.out.println(readFile(filePath.toString()));
             }
         });
-        }    
+        }
     }
-    
     public ArrayList<DataTuple> addSourcefile(String name, String path) throws IOException {
         this.sourceFiles.add(new DataTuple(readFile(path), name));  
         return sourceFiles;
