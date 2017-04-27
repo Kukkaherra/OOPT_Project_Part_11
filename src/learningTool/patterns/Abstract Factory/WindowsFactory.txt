@@ -1,0 +1,8 @@
+package abstractfactory;
+
+public class WindowsFactory implements AbstractFactory {
+
+    public Button makeButton() {
+        return new WindowsButton();
+    }
+}

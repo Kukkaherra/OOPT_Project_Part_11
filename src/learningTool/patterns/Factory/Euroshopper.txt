@@ -1,0 +1,8 @@
+package factory;
+
+public class Euroshopper implements Drink {
+
+    public void drink() {
+        System.out.println("Drinking ES!");
+    }
+}

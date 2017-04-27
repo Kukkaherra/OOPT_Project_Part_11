@@ -1,7 +1,6 @@
 package factory;
+
 public interface AbstractFactory {
 
-    public Dog createDog(String breed);
-
-    public Cat createCat(String breed);
+    public Drink createDrink(String drinkName);
 }

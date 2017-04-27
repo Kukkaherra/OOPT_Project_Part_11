@@ -1,0 +1,10 @@
+package abstractfactory;
+
+public class Mainclass {
+    public static void main(String[] args) {
+        WindowsFactory winFactory = new WindowsFactory();
+        LinuxFactory linFactory = new LinuxFactory();
+        linFactory.makeButton();
+        winFactory.makeButton();
+    }
+}
