@@ -1,0 +1,16 @@
+
+package decorator;
+public class BorderDecorator extends ShapeDecorator {
+
+    private String color;
+
+    public BorderDecorator(Shape s, String Color) {
+        super(s);
+        color = Color;
+    }
+
+    public void draw() {
+        shape.draw();
+        System.out.println("The shape has " + color + " border.");
+    }
+}

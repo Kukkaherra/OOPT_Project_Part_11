@@ -1,0 +1,12 @@
+package decorator;
+
+public class Mainclass {
+    public static void main(String[] args) {
+        Shape c = new Circle();
+        Shape fR = new FillGradientDecorator(c, 40);
+        Shape bR = new BorderDecorator(c, "(212, 128, 0)");
+        
+        fR.draw();
+        bR.draw();
+    }
+}
