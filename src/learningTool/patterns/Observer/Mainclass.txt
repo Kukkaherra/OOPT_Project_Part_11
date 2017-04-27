@@ -1,0 +1,23 @@
+package observer;
+public class Mainclass {
+    public static void main(String[] args) {
+        Application app1 = new Application("Snapchat");
+        Application app2 = new Application("WhatsApp");
+        
+        Mobile phone1 = new Mobile("Antti");
+        Mobile phone2 = new Mobile("Niilo");
+        
+        app1.registerObserver(phone1);
+        app2.registerObserver(phone1);
+        app1.registerObserver(phone2);
+        app2.registerObserver(phone2);
+        
+        app1.setNews("You have a new snap!");
+        app1.notifyObservers();
+        
+        app2.setNews("You have 2 unread messages!");
+        app2.notifyObservers();
+        
+        
+    }
+}
