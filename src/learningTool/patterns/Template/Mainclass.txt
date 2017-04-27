@@ -1,0 +1,11 @@
+package template;
+public class Mainclass {
+
+    public static void main(String[] args) {
+        EuroShopper ES = new EuroShopper();
+        ES.prepareBuzz();
+        
+        MegaForce MF = new MegaForce();
+        MF.prepareBuzz();
+    }
+}

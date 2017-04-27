@@ -1,0 +1,7 @@
+package template;
+public class EuroShopper extends EnergyDrink {
+
+    public void buzz() {
+        System.out.println("EuroShopper gives a great buzz!");
+    }
+}

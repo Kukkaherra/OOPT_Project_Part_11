@@ -1,0 +1,18 @@
+package template;
+
+public abstract class EnergyDrink {
+    public final void prepareBuzz() {
+        uncork();
+        drink();
+        buzz();
+    }
+    public void uncork() {
+        System.out.println("Energy drink has been uncorked!");
+    }
+
+    public void drink() {
+        System.out.println("Drinking energy drink");
+    }
+
+    public abstract void buzz();
+}

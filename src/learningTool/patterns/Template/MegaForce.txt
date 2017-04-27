@@ -1,0 +1,7 @@
+package template;
+public class MegaForce extends EnergyDrink {
+
+    public void buzz() {
+        System.out.println("MegaForce doesn't give so great buzz :(");
+    }
+}
