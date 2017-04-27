@@ -12,7 +12,7 @@ import javafx.scene.image.Image;
  *
  * @author MyMac
  */
-public class Template extends Pattern{
+public class Template {
      private final String description;
      private ArrayList<String> sourceFiles = new ArrayList<>();
 
@@ -21,7 +21,6 @@ public class Template extends Pattern{
         this.sourceFiles.add(FileReader.readFile("src/learningTool/Mainclass.txt"));
     }
     
-    @Override
     public String getDescription() {
        return description;
     }
@@ -30,12 +29,10 @@ public class Template extends Pattern{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public ArrayList getSourceFiles() {
         return sourceFiles;
     }
     
-    @Override
     public String toString() {
         return "Template";
     }

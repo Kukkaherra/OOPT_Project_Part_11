@@ -16,7 +16,7 @@ public class Model {
     }
     
     public void patternList() {
-        patterns.add(Compound.getInstance());
+        //patterns.add(Compound);
     }
     
     private Model() {

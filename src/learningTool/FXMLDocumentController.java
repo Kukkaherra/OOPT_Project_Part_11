@@ -104,7 +104,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void selectPattern() throws IOException {
         clearTabs();
-        Pattern com = Compound.getInstance();
+        Pattern com = new Pattern("Compound");
         
         selectedPattern = patternList.getSelectionModel().getSelectedItem();
         patternUMLButton.setDisable(false); // Tool starts with no selected pattern; after which, it is impossible to deselect
@@ -138,7 +138,7 @@ public class FXMLDocumentController implements Initializable {
     private void UMLButtonAction(ActionEvent event) throws IOException {
         
         // TODO: Change this to 'selectedPattern'
-        Pattern com = Compound.getInstance();
+        Pattern com = new Pattern("Compound");
         Image img = com.getUML();
         
         Stage stage = new Stage();

@@ -1,5 +1,6 @@
 package learningTool;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,11 +18,12 @@ public class Mainclass extends Application {
         stage.setResizable(false);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
        // Model model = Model.getInstance();
-       Pattern comp = Compound.getInstance();
-       System.out.println(comp.getSourceFiles().get(0));
+       Pattern comp = new Pattern("Compound");
+       comp.directorySearch();
+//       System.out.println(comp.getSourceFiles().get(0));
         
        launch(args);
     }
