@@ -1,0 +1,7 @@
+package factory;
+public class Bombay implements Cat {
+
+    public void meow() {
+        System.out.println("Bombay meows!");
+    }
+}

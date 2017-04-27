@@ -1,0 +1,27 @@
+package factory;
+public class AnimalFactory implements AbstractFactory {
+
+    public Cat createCat(String breed) {
+        switch (breed) {
+            case "bombay":
+                System.out.println("Bombay created!");
+                return new Bombay();
+            default:
+                System.out.println("You didn't write properly but I created Bombay anyways :)");
+                return new Bombay();
+        }
+    }
+
+
+    public Dog createDog(String breed) {
+        switch (breed) {
+            case "afghanhound":
+                System.out.println("Afghan Hound created!");
+                return new AfghanHound();
+            
+            default:
+                System.out.println("You didn't write properly but I created Afghan Hound anyways :)");
+                return new AfghanHound();
+        }
+    }
+}

@@ -1,0 +1,14 @@
+package factory;
+
+public class Mainclass {
+    
+    public static void main(String[] args) {
+        AnimalFactory aFactory = new AnimalFactory();
+        
+        Cat newCat = aFactory.createCat("bombay");
+        newCat.meow();
+        
+        Dog newDog = aFactory.createDog("afghanhound");
+        newDog.bark();
+    }
+}
