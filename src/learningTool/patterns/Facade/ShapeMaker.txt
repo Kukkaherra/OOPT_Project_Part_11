@@ -1,0 +1,66 @@
+package facade;
+public class ShapeMaker {
+    private Shape triangle;
+    private Shape rectangle;
+    private Shape filldecorator;
+    private Shape borderdecorator;
+    
+    public ShapeMaker() {
+        triangle = new Triangle();
+        rectangle = new Rectangle();
+    }
+    public void drawTriangle() {
+        triangle.draw();
+    }
+    public void drawRectangle() {
+        rectangle.draw();
+    }
+    public void drawFillDecorator() {
+        filldecorator.draw();
+    }
+    public void drawBorderDecorator() {
+        borderdecorator.draw();
+    }
+    private Shape getShape(int shape) {
+        switch (shape) {
+            case 1:
+                return triangle;
+            case 2:
+                return rectangle;
+            default:
+                return rectangle;
+        }
+    }
+    public void drawShape(int shape) {
+        getShape(shape).draw();
+    }
+        
+    
+    public void selectFillDecorator(int decorator, int shape) {
+        Shape c = getShape(shape);
+        switch (decorator) {
+            case 1:
+                int gradient=40;
+                filldecorator = new FillGradientDecorator(c, gradient);
+                break;
+            default:
+                String color = "(212, 10, 52)";
+                filldecorator = new FillDecorator(c, color);
+                break;
+        }
+    }
+    public void selectBorderDecorator(int decorator, int shape) {
+        Shape c = getShape(shape);
+        switch (decorator) {
+            case 1:
+                int thickness = 40;
+                borderdecorator = new BorderThicknessDecorator(c, thickness);
+                break;
+            default:
+                String color = "(112, 210, 52)";
+                borderdecorator = new BorderDecorator(c, color);
+                break;
+            }
+    }
+    
+}

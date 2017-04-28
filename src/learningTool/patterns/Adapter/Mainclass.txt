@@ -1,0 +1,14 @@
+package adapter;
+
+public class Mainclass {
+
+    public static void main(String[] args) {
+        Persian p = new Persian();
+        System.out.println("The cat says...");
+        p.meow();
+        Cat ba = new BengalAdapter(new Bengal());
+        ba.meow();
+        Tiger t = new Bengal();
+        t.roar();
+    }
+}

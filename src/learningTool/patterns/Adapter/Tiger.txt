@@ -1,0 +1,5 @@
+package adapter;
+public interface Tiger {
+
+    public void roar();
+}

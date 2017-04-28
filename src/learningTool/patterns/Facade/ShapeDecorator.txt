@@ -1,0 +1,17 @@
+package facade;
+public abstract class ShapeDecorator implements Shape {
+
+    protected Shape shape;
+
+    public void draw() {
+        shape.draw();
+    }
+
+    public ShapeDecorator(Shape s) {
+        shape = s;
+    }
+
+    public Shape ShapeDecorator(Shape s) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+}

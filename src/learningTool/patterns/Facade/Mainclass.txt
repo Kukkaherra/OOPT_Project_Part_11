@@ -1,0 +1,11 @@
+package facade;
+public class Mainclass {
+    public static void main(String[] args) {
+        ShapeMaker sm = new ShapeMaker();
+        sm.selectFillDecorator(1, 2);
+        sm.selectBorderDecorator(1, 2);
+        sm.drawShape(2);
+        sm.drawFillDecorator();
+        sm.drawBorderDecorator();
+    }
+}

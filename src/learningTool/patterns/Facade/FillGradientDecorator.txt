@@ -1,0 +1,14 @@
+package facade;
+public class FillGradientDecorator extends ShapeDecorator {
+    private int location;
+
+    public FillGradientDecorator(Shape s, int margin) {
+        super(s);
+        location=margin;
+    }
+
+    public void draw() {
+        shape.draw();
+        System.out.println("The shape has a fill gradient with location: "+location+".");
+    }
+}

@@ -1,0 +1,25 @@
+package adapter;
+/*
+OOPT
+Week 7: Adapter
+Sakari Laine 0418598
+**************
+**BengalAdapter**
+Includes: private Tiger
+Description: Implements Cat interface and thus can be used as a Cat.
+Constructor: Assigns the Tiger to private variable tiger
+*******************
+**Other functions**
+meow: "translates" the cat meow() to tiger roar()
+*/
+public class BengalAdapter implements Cat {
+    private Tiger tiger;
+
+    public BengalAdapter(Tiger t) {
+        tiger = t;
+    }
+
+    public void meow() {
+        tiger.roar();
+    }
+}

@@ -1,0 +1,8 @@
+package adapter;
+
+public class Bengal implements Tiger {
+
+    public void roar() {
+        System.out.println("ROAR!");
+    }
+}

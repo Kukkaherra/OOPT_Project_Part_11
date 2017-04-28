@@ -1,0 +1,15 @@
+package facade;
+public class BorderThicknessDecorator extends ShapeDecorator {
+
+    private int thickness;
+
+    public BorderThicknessDecorator(Shape s, int thick) {
+        super(s);
+        thickness = thick;
+    }
+
+    public void draw() {
+        shape.draw();
+        System.out.println("The shape has a border with thickness of " + thickness + ".");
+    }
+}
