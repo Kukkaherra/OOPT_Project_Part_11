@@ -15,28 +15,28 @@ public class PatternComposite implements PatternHelper{
         return question;
     }
 
-    public ArrayList<String> getQuestionList() {
-        ArrayList<String> tempList = new ArrayList<>();
-        childNodes.forEach((node) -> {
-            tempList.add(node.getData());
-        });
-        return tempList;
-    }
-    
+	public ArrayList<PatternHelper> getChildren() {
+		return childNodes;
+	}
+	
     public void add(PatternHelper node) {
        childNodes.add(node);
     }
 
-    @Override
     public PatternHelper getChild(int i) {
         return childNodes.get(i);
     }
 
     @Override
     public String toString() {
-        return "Question: " + getData();
+        return question;
     }
 
-
+	public void print() {
+		System.out.println("Composite: " + this);
+		for (PatternHelper ph : childNodes) {
+			ph.print();
+		}
+	}
     
 }

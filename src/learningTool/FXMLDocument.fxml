@@ -9,7 +9,7 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -20,16 +20,17 @@
    <children>
       <SplitPane dividerPositions="0.30501535312180145" layoutX="315.0" layoutY="180.0" prefHeight="639.0" prefWidth="999.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane fx:id="menuSection" prefHeight="158.0" prefWidth="202.0" SplitPane.resizableWithParent="false">
+          <AnchorPane fx:id="menuSection" maxHeight="619.0" maxWidth="295.0" SplitPane.resizableWithParent="false">
                <children>
                   <SplitPane dividerPositions="0.5983739837398374" layoutX="35.0" layoutY="64.0" orientation="VERTICAL" prefHeight="617.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <items>
                       <AnchorPane prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <ListView fx:id="patternList" layoutX="48.0" layoutY="30.0" onMouseClicked="#selectPattern" prefHeight="335.0" prefWidth="293.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                              <ListView fx:id="patternList" layoutX="48.0" layoutY="30.0" onMouseClicked="#selectPattern" prefHeight="335.0" prefWidth="293.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                                  <opaqueInsets>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </opaqueInsets></ListView>
+                                 </opaqueInsets>
+                              </ListView>
                               <Label layoutX="1.0" layoutY="-1.0" prefHeight="31.0" prefWidth="293.0" text="Select Pattern from list ..." AnchorPane.bottomAnchor="351.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
                                   <font>
                                     <Font name="System Bold" size="12.0" />
@@ -40,9 +41,9 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane maxHeight="233.0" maxWidth="293.0" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Label prefHeight="44.0" prefWidth="293.0" text="... or Answer these questions to find a suitable pattern" wrapText="true" AnchorPane.bottomAnchor="206.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Label prefHeight="48.0" prefWidth="217.0" text="... or Answer these questions to find a suitable pattern" wrapText="true" AnchorPane.bottomAnchor="185.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="0.0">
                                   <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -50,15 +51,20 @@
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </padding>
                               </Label>
-                              <ListView fx:id="questionList" layoutX="4.0" layoutY="44.0" prefHeight="100.0" prefWidth="286.0" />
-                              <FlowPane fx:id="breadCrumbs" layoutX="4.0" layoutY="144.0" prefHeight="100.0" prefWidth="286.0" />
+                              <ListView fx:id="questionList" layoutX="4.0" layoutY="44.0" onMouseClicked="#selectRequirement" prefHeight="101.0" prefWidth="286.0" AnchorPane.bottomAnchor="88.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="44.0" />
+                              <Pane layoutX="3.0" layoutY="145.0" prefHeight="86.0" prefWidth="287.0">
+                                 <children>
+                                    <Text fx:id="breadCrumbs" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="286.00000816583633" />
+                                 </children>
+                              </Pane>
+                              <Button layoutX="227.0" layoutY="10.0" mnemonicParsing="false" onAction="#ResetHelperAction" text="Reset" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
                            </children>
                         </AnchorPane>
                     </items>
                   </SplitPane>
                </children>
             </AnchorPane>
-          <AnchorPane fx:id="patternSection" prefHeight="617.0" prefWidth="676.0" SplitPane.resizableWithParent="false">
+          <AnchorPane fx:id="patternSection" maxHeight="636.0" maxWidth="676.0" SplitPane.resizableWithParent="false">
                <children>
                   <Label fx:id="patternName" layoutX="14.0" layoutY="13.0" text="Select a Pattern to begin">
                      <font>
@@ -81,7 +87,7 @@
                        </Tab>
                     </tabs>
                   </TabPane>
-                  <Button fx:id="patternUMLButton" disable="true" layoutX="602.0" layoutY="11.0" mnemonicParsing="false" onAction="#UMLButtonAction" text="Open UML" />
+                  <Button fx:id="patternUMLButton" disable="true" layoutX="588.0" layoutY="11.0" mnemonicParsing="false" onAction="#UMLButtonAction" text="Open UML" />
                   <ScrollPane fitToWidth="true" layoutX="6.0" layoutY="42.0">
                     <content>
                       <AnchorPane prefHeight="165.0" prefWidth="665.0">

@@ -5,6 +5,8 @@
  */
 package learningTool;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Oskari
@@ -19,7 +21,7 @@ public class PatternNode implements PatternHelper {
 
     @Override
     public String getData() {
-       return this.patternName;
+       return patternName;
     }
     
     @Override
@@ -27,14 +29,23 @@ public class PatternNode implements PatternHelper {
         return null;
     }
 
+	public ArrayList<PatternHelper> getChildren() {
+		return null;
+	}
+
     @Override
     public String toString() {
-        return "Pattern " + getData();
+        return patternName;
     }
 
     @Override
     public void add(PatternHelper node) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+	
+	@Override
+	public void print() {
+		System.out.println(this);
+	}
     
 }

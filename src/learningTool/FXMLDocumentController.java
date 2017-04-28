@@ -39,8 +39,11 @@ import javafx.stage.Stage;
  */
 public class FXMLDocumentController implements Initializable {
     
+	// TODO: move to model
     //private Pattern selectedPattern;
     private String selectedPattern;
+	private PatternHelper helperRoot;
+	private PatternHelper selectedHelper;
     
     private Label label;
     @FXML
@@ -60,12 +63,17 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Text sourceCode;
     @FXML
-    private FlowPane breadCrumbs;
+    private Text breadCrumbs;
     @FXML
-    private ListView<String> questionList;
+    private ListView<PatternHelper> questionList;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+		
+		HelperBuilder hb = new HelperBuilder();
+		PatternHelper ph = hb.parse(hb.getRoot());
+		helperRoot = ph;
+		selectedHelper = ph;
         // The listviews in the UI use toString by default as what each item is displayed as (if it is object and not a string),
         // so remember to override your toStrings(), and make your own ones ;)
         
@@ -89,16 +97,8 @@ public class FXMLDocumentController implements Initializable {
         );
         patternList.setItems(items);
         
-        // TODO: Change this to whatever the fuck the tree structure will be, possibly:
-        // ObservableList<PatternHelper> = model.getInstance().getRoot();
-        ObservableList<String> questions = FXCollections.observableArrayList (
-            "I need to create objects...",
-            "I need to compose objects into larger structures...",
-            "I need to dictate behaviour between objects..."
-        );
+        ObservableList<PatternHelper> questions = FXCollections.observableArrayList(ph.getChildren());
         questionList.setItems(questions);
-        
-        //breadCrumbs.getChildren().add(new Label("I need to create objects... >"));
     }    
 
     @FXML
@@ -145,5 +145,33 @@ public class FXMLDocumentController implements Initializable {
         stage.setScene(new Scene(new Pane(new ImageView(img))));
         stage.show();
     }
+
+	@FXML
+	private void selectRequirement(MouseEvent event) {
+        Integer index = questionList.getSelectionModel().getSelectedIndex();
+		if (index != -1 && selectedHelper != null) {
+			selectedHelper = selectedHelper.getChild(index);
+			updateHelper();
+			if (selectedHelper.getChildren().size() == 1) { // we've reached a leaf
+				selectedHelper = null; // Just to prevent user from going past the leaf node 
+			}
+		}
+	}
+	
+	private void updateHelper() {
+		if (selectedHelper != null) { // Just to prevent user from going past the leaf node 
+			String crumb = selectedHelper.getData() + " >\n";
+			breadCrumbs.setText(breadCrumbs.getText() + crumb);
+			ObservableList<PatternHelper> questions = FXCollections.observableArrayList(selectedHelper.getChildren());
+			questionList.setItems(questions);
+		} 
+	}
+	
+	@FXML
+	private void ResetHelperAction(ActionEvent event) {
+		selectedHelper = helperRoot;
+		updateHelper();
+		breadCrumbs.setText("");
+	}
     
 }

@@ -14,7 +14,6 @@ public class Mainclass extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        // I'm a HTML + CSS guy, java responsive design goes over my head
         stage.setResizable(false);
     }
 
