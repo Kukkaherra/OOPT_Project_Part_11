@@ -1,0 +1,8 @@
+package abstractfactory;
+
+public class LinuxFactory implements AbstractFactory {
+
+    public Button makeButton() {
+        return new LinuxButton();
+    }
+}

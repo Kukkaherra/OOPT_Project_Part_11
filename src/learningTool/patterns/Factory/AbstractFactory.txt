@@ -1,0 +1,6 @@
+package factory;
+
+public interface AbstractFactory {
+
+    public Drink createDrink(String drinkName);
+}

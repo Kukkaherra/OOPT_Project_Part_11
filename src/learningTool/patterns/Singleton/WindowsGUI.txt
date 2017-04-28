@@ -1,0 +1,50 @@
+package singleton;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class WindowsGUI extends JFrame implements ActionListener  {
+    private JLabel headerlbl;
+    private JTextField tf;
+    private JButton b;
+    private JCheckBox cb;
+    private JList list;
+    private DefaultListModel listModel;
+    private JScrollPane sp;
+    public WindowsGUI() {
+        listModel = new DefaultListModel();
+        listModel.addElement("Ananas");
+        listModel.addElement("Kinkku");
+        listModel.addElement("Kepappi");
+        list = new JList(listModel);
+        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        list.setSelectedIndex(0);
+        sp = new JScrollPane(list);
+        sp.setBounds(50,250,150,40);
+        add(sp);
+        
+        b = new JButton("Exit");
+        b.addActionListener(this);
+        b.setBounds(30, 100, 80, 30);
+        add(b);
+        
+        cb = new JCheckBox("Yes?");
+        cb.setSelected(true);
+        cb.setBounds(200,200,100,50);
+        add(cb);
+        
+        tf = new JTextField();
+        tf.setBounds(60, 150, 170, 20);
+        add(tf);
+        
+        headerlbl = new JLabel("GUI :D");
+        headerlbl.setBounds(0, 0, 400, 50);
+        add(headerlbl);
+       
+        setSize(400, 400);
+        setLayout(null);
+        setVisible(true);
+    }
+    public void actionPerformed(ActionEvent e) {
+        System.exit(0);
+    }
+}

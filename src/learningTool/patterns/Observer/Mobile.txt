@@ -1,0 +1,11 @@
+package observer;
+public class Mobile implements Observer {
+    private String name;
+    public Mobile(String mobileName) {
+        name=mobileName;
+    }
+    public void update(Subject s) {
+        Application a1 = (Application) s;
+        System.out.println(name + " received a message from " + a1.getAppName() + ": " + a1.getNews());
+    }
+}

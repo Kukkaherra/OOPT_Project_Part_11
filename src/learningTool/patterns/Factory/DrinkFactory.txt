@@ -1,0 +1,14 @@
+package factory;
+
+public class DrinkFactory implements AbstractFactory {
+
+    public Drink createDrink(String drinkName) {
+        if (drinkName=="euroshopper") {
+            return new Euroshopper();
+        }
+        else {
+            return new Euroshopper();
+        }
+    
+    }
+}

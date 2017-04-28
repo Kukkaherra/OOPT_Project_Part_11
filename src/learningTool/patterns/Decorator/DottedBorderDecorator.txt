@@ -1,0 +1,15 @@
+package decorator;
+public class DottedBorderDecorator extends ShapeDecorator {
+
+    private int margin;
+
+    public DottedBorderDecorator(Shape s, int Margin) {
+        super(s);
+        margin = Margin;
+    }
+
+    public void draw() {
+        shape.draw();
+        System.out.println("The shape has a dotted border with a margin of " + margin + ".");
+    }
+}

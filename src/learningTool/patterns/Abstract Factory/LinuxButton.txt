@@ -1,0 +1,7 @@
+package abstractfactory;
+
+public class LinuxButton implements Button {
+    public LinuxButton() {
+        System.out.println("Creating a button for Linux...");
+    }
+}

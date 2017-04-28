@@ -1,0 +1,15 @@
+package singleton;
+public class Singleton{
+    public WindowsGUI wGUI;
+    private static Singleton instance = null;
+
+    private Singleton() {
+        wGUI = new WindowsGUI();
+    }
+
+    public static Singleton getInstance() {
+        if (instance == null)
+            instance = new Singleton();
+        return instance;
+    }
+}

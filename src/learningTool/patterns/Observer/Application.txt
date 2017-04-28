@@ -1,0 +1,42 @@
+package observer;
+import java.util.ArrayList;
+
+public class Application implements Subject {
+
+    private ArrayList<Observer> observers;
+    private String name;
+    private String news;
+    private Boolean changed=false;
+
+    public Application(String appName) {
+        observers = new ArrayList();
+        name=appName;
+    }
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    public void removeObserver(Observer o) {
+        observers.remove(o);
+    }
+
+    public void notifyObservers() {
+        if (changed) {
+            for (Observer o : observers) {
+                o.update(this);
+            }
+        changed=false;
+        }
+    }
+
+    public void setNews(String s) {
+        news=s;
+        changed=true;
+    }
+    public String getAppName() {
+        return name;
+    }
+    public String getNews() {
+        return news;
+    }
+}
