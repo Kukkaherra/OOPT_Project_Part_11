@@ -23,9 +23,11 @@ public class PatternBuilder {
 				paths.forEach(filePath -> {
 				if (Files.isRegularFile(filePath)) {
 					try {
-						pattern.addSourcefile(readFile(filePath.getName(4).toString()), filePath.toString());
-						pattern.setUML(filePath.toString());
-						patterns.add(pattern);
+						if (!filePath.getName(4).toString().contains("description.txt") && !filePath.getName(4).toString().contains("uml.png")) {
+							pattern.addSourcefile(readFile(filePath.getName(4).toString()), filePath.toString());
+							pattern.setUML(filePath.toString());
+							patterns.add(pattern);
+						}
 					} catch (IOException ex) {
 						Logger.getLogger(Model.class.getName()).log(Level.SEVERE, null, ex);
 						}

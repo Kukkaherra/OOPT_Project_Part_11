@@ -19,17 +19,16 @@ public class Pattern {
     
     public Pattern(String patternName) {
         this.patternName = patternName;
+		this.description = PatternBuilder.readFile("src/learningTool/" + patternName + "/description.txt");
+		setUML("src/learningTool/" + patternName + "/uml.png");
     }
-
-    public String getDescription() {
-       return description;
+	
+	public ArrayList<DataTuple> addSourcefile(String name, String path) throws IOException {
+        this.sourceFiles.add(new DataTuple(PatternBuilder.readFile(path), name));  
+        return sourceFiles;
     }
-
-    public String toString() {
-        return patternName;
-    }
-
-    public ArrayList<DataTuple> getSourceFiles() {
+	
+	public ArrayList<DataTuple> getSourceFiles() {
         return sourceFiles;
     }
     
@@ -42,20 +41,12 @@ public class Pattern {
         uml = new Image(file.toURI().toString());
         
     }
-    
-    
-    public ArrayList<DataTuple> addSourcefile(String name, String path) throws IOException {
-        this.sourceFiles.add(new DataTuple(PatternBuilder.readFile(path), name));  
-        return sourceFiles;
+
+    public String getDescription() {
+       return description;
     }
-    
-    /*public void addSourcefile(String name, String path) {
-        this.sourceFiles.add(new DataTuple(readFile(path), name));
-        // Description
-        this.description = readFile("src/learningTool/description.txt");
-        
-        // UML
-        File file = new File("src/learningTool/patterns/compound/uml.png");
-        uml = new Image(file.toURI().toString());
-    }*/
+	
+    public String toString() {
+        return patternName;
+    }
 }
