@@ -22,7 +22,6 @@ public class Mainclass extends Application {
 
        // Model model = Model.getInstance();
        Pattern comp = new Pattern("Compound");
-       comp.directorySearch();
 //       System.out.println(comp.getSourceFiles().get(0));
         
        launch(args);

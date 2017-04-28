@@ -47,28 +47,13 @@ public class Pattern {
         return uml;
     }
     
-    public void setUML(File file, String path) {
-        file = new File(path);
+    public void setUML(String path) {
+        File file = new File(path);
         uml = new Image(file.toURI().toString());
         
     }
     
-    public void directorySearch() throws IOException {
-        File[] directories = new File("src/learningTool/patterns").listFiles(File::isDirectory);
-        for (File directory : directories) {
-            Pattern pattern = new Pattern(directory.getName());
-        }
-        Stream<Path> paths = Files.walk(Paths.get("src/learningTool/patterns/"));{
-        paths.forEach(filePath -> {
-            if (Files.isRegularFile(filePath)) {
-                //Print Directory
-               // System.out.println(filePath.getName(3));
-                //Print file content
-              //  System.out.println(readFile(filePath.toString()));
-            }
-        });
-        }
-    }
+    
     public ArrayList<DataTuple> addSourcefile(String name, String path) throws IOException {
         this.sourceFiles.add(new DataTuple(readFile(path), name));  
         return sourceFiles;
