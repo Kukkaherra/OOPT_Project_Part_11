@@ -1,0 +1,20 @@
+package command;
+
+public class Mainclass {
+    public static void main(String[] args) {
+        Command lighton_com = new LightOnCommand(new Light());
+        Command cat_com = new CatCommand(new Cat());
+        Command gd_com = new GarageDoorCommand(new GarageDoor());
+        Remote r = new Remote();
+        
+        r.setCommand1(lighton_com);
+        r.executeCommand1();
+        
+        r.setCommand2(cat_com);
+        r.executeCommand2();
+        
+        r.setCommand3(gd_com);
+        r.executeCommand3();
+    }
+    
+}

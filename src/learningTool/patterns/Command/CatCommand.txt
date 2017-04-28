@@ -1,0 +1,13 @@
+package command;
+public class CatCommand implements Command {
+
+    private Cat cat;
+
+    public CatCommand(Cat c) {
+        cat = c;
+    }
+
+    public String execute() {
+        return cat.activate();
+    }
+}

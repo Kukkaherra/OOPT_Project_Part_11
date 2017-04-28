@@ -1,0 +1,11 @@
+package command;
+public class Light {
+    private boolean on=false;
+    public String on() {
+        on=!on;
+        if (on)
+            return "Light is on.";
+        else
+            return "Light is off.";
+    }
+}

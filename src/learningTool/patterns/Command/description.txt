@@ -1,0 +1,5 @@
+The Command Pattern allows requests to be encapsulated as objects, thereby allowing clients to be parameterized with different requests. Imagine a restaurant scenario. A waiter takes an order (the command) from their customer and writes the order down (the encapsulation) The order is then queued for a short order cook. Each order pad of the waiters are not dependent on the menu. Thus they can support orders, or commands, to cook many different items. 
+
+The Command interface (customer) is defined with a execute-method (Order()). One, or more, derived classes will encapsulate subsets of the receiver-object, the method to invoke and arguments to pass. When the Command-object is passed from the Command-interface to the invoker (receiver) the invoker will then decide when to execute (in this case, when to CookOrder()). 
+
+Two important features of the Command pattern are that the interface is separated so that the Client-interface is separated from the receiver. They are also separated by time by a ready-to-go processing request being stored to be stated later. 

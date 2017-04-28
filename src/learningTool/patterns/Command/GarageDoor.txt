@@ -1,0 +1,11 @@
+package command;
+public class GarageDoor {
+    private boolean open=false;
+    public String open() {
+        open=!open;
+        if (open)
+            return "Door is open!";
+        else
+            return "Door is closed!";
+    }
+}

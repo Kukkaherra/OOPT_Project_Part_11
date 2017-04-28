@@ -1,0 +1,14 @@
+package command;
+public class GarageDoorCommand implements Command {
+
+    private GarageDoor gd;
+
+    public GarageDoorCommand(GarageDoor door) {
+        gd=door;
+    }
+
+    public String execute() {
+        return gd.open();
+        
+    }
+}

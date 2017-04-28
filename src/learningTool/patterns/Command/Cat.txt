@@ -1,0 +1,11 @@
+package command;
+public class Cat {
+    private boolean active=false;
+    public String activate() {
+        active=!active;
+        if (active)
+            return "Cat is active.";
+        else
+            return "Cat is inactive.";
+    }
+}
