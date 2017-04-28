@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package learningTool;
 
 import java.io.File;
@@ -21,7 +15,7 @@ public class HelperBuilder {
     public HelperBuilder(){
         
         try {
-            File fXmlFile = new File("requirements.xml");
+            File fXmlFile = new File("src/learningTool/requirements.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);

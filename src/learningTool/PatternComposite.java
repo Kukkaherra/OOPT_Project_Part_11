@@ -11,18 +11,22 @@ public class PatternComposite implements PatternHelper{
         this.question = question;
     } 
     
+	@Override
     public String getData() {
         return question;
     }
 
+	@Override
 	public ArrayList<PatternHelper> getChildren() {
 		return childNodes;
 	}
 	
+	@Override
     public void add(PatternHelper node) {
        childNodes.add(node);
     }
 
+	@Override
     public PatternHelper getChild(int i) {
         return childNodes.get(i);
     }
@@ -32,11 +36,12 @@ public class PatternComposite implements PatternHelper{
         return question;
     }
 
+	@Override
 	public void print() {
 		System.out.println("Composite: " + this);
-		for (PatternHelper ph : childNodes) {
+		childNodes.forEach((ph) -> {
 			ph.print();
-		}
+		});
 	}
     
 }

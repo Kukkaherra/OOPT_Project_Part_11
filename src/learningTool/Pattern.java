@@ -17,16 +17,6 @@ public class Pattern {
     private ArrayList<DataTuple> sourceFiles = new ArrayList<>();
     private Image uml;
     
-    public String readFile(String path) {
-        String content = null;
-        try {
-                content = new String(Files.readAllBytes(Paths.get(path)));
-        } catch (IOException e) {
-                System.err.print(e);
-        }
-        return content; 
-    }
-
     public Pattern(String patternName) {
         this.patternName = patternName;
     }
@@ -55,7 +45,7 @@ public class Pattern {
     
     
     public ArrayList<DataTuple> addSourcefile(String name, String path) throws IOException {
-        this.sourceFiles.add(new DataTuple(readFile(path), name));  
+        this.sourceFiles.add(new DataTuple(PatternBuilder.readFile(path), name));  
         return sourceFiles;
     }
     
