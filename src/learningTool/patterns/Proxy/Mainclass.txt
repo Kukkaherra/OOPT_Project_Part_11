@@ -3,7 +3,7 @@ package proxypattern;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ProxyPattern {
+public class Mainclass {
 
 	public static void main(String[] args) {
 		

@@ -8,23 +8,23 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Stream;
-import javafx.scene.image.Image;
 
 public class Pattern {
 	
     private String description;
     private String patternName;
     private ArrayList<DataTuple> sourceFiles = new ArrayList<>();
-    private Image uml;
+    private String umlPath;
     
     public Pattern(String patternName) {
         this.patternName = patternName;
-		this.description = PatternBuilder.readFile("src/learningTool/" + patternName + "/description.txt");
-		setUML("src/learningTool/" + patternName + "/uml.png");
+		this.description = PatternBuilder.readFile("src/learningTool/patterns/" + patternName + "/description.txt");
+		umlPath = "src/learningTool/patterns/" + patternName + "/uml.png";
     }
 	
 	public ArrayList<DataTuple> addSourcefile(String name, String path) throws IOException {
-        this.sourceFiles.add(new DataTuple(PatternBuilder.readFile(path), name));  
+		// Also remove file extension from name with substring
+        this.sourceFiles.add(new DataTuple(PatternBuilder.readFile(path), name.substring(0, name.lastIndexOf('.'))));  
         return sourceFiles;
     }
 	
@@ -32,14 +32,8 @@ public class Pattern {
         return sourceFiles;
     }
     
-    public Image getUML() {
-        return uml;
-    }
-    
-    public void setUML(String path) {
-        File file = new File(path);
-        uml = new Image(file.toURI().toString());
-        
+    public String getUMLPath() {
+        return umlPath;
     }
 
     public String getDescription() {

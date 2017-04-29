@@ -1,6 +1,6 @@
 package compositeshapes;
 
-public class CompositeShapes {
+public class Mainclass {
 
 	public static void main(String[] args) {
 		Shape circle = new Circle("Blue", 20.0);

@@ -20,20 +20,20 @@ public class PatternBuilder {
             for (File directory : directories) {
 				Pattern pattern = new Pattern(directory.getName());
 				Stream<Path> paths = Files.walk(Paths.get("src/learningTool/patterns/" + pattern.toString() + "/"));{
-				paths.forEach(filePath -> {
-				if (Files.isRegularFile(filePath)) {
-					try {
-						if (!filePath.getName(4).toString().contains("description.txt") && !filePath.getName(4).toString().contains("uml.png")) {
-							pattern.addSourcefile(readFile(filePath.getName(4).toString()), filePath.toString());
-							pattern.setUML(filePath.toString());
-							patterns.add(pattern);
+					paths.forEach(filePath -> {
+						if (Files.isRegularFile(filePath)) {
+							try {
+								if (!filePath.getName(4).toString().contains("description.txt") && !filePath.getName(4).toString().contains("uml.png")) {
+									pattern.addSourcefile(filePath.getName(4).toString(), filePath.toString());
+									//System.out.println(filePath.getName(4).toString());
+								}
+							} catch (IOException ex) {
+								Logger.getLogger(Model.class.getName()).log(Level.SEVERE, null, ex);
+							}
 						}
-					} catch (IOException ex) {
-						Logger.getLogger(Model.class.getName()).log(Level.SEVERE, null, ex);
-						}
-					}
-				});
+					});
 				}   
+				patterns.add(pattern);
 			}
         } catch (IOException eio) {
             System.err.print(eio);

@@ -2,7 +2,7 @@ package iteratormenu;
 
 import java.util.Scanner;
 
-public class MainClass {
+public class Mainclass {
 
 	public static void main(String args[]) {
 			BurgerKingMenu bkMenu = new BurgerKingMenu();
