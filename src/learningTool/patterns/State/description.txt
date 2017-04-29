@@ -1,6 +1,6 @@
-“The State Pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.”
+"The State Pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class."
 
-In the State pattern we encapsulate states into separate classes and delegate the object representing the current state, this means that behavior changes along with the internal state. When a state changes, the behaviour changes, which gives the appearance of being a different class, but in reality we’re using composition to give the appearance of a class by referencing different state objects. 
+In the State pattern we encapsulate states into separate classes and delegate the object representing the current state, this means that behavior changes along with the internal state. When a state changes, the behaviour changes, which gives the appearance of being a different class, but in reality we're using composition to give the appearance of a class by referencing different state objects. 
 
 The Context is the class which can have any of the internal states.
 

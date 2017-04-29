@@ -1,11 +1,11 @@
-﻿The Observer Pattern is used in situations where one or more objects (that don’t necessarily have to be of same type) are interested in another object’s (the Subject) information or state. Consider screens at a train station that show the current information on arrival times. There may be a central screen to show all incoming / outgoing trains for the whole day, and several smaller screens that show, for example, only the 3 next trains. In this example, the screens work as observers, and the system that keeps track of train locations and estimates arrivals is the Subject. Each functional screen needs to be registered as observer to the Subject.
+﻿The Observer Pattern is used in situations where one or more objects (that don't necessarily have to be of same type) are interested in another object's (the Subject) information or state. Consider screens at a train station that show the current information on arrival times. There may be a central screen to show all incoming / outgoing trains for the whole day, and several smaller screens that show, for example, only the 3 next trains. In this example, the screens work as observers, and the system that keeps track of train locations and estimates arrivals is the Subject. Each functional screen needs to be registered as observer to the Subject.
 
-Each time the train arrival estimates are updated to reflect the most recent information, the Train System notifies all of its Observers by going through each of the registered observers, and calling their respective “update”-method.
+Each time the train arrival estimates are updated to reflect the most recent information, the Train System notifies all of its Observers by going through each of the registered observers, and calling their respective "update"-method.
 
-Observer Pattern represents a loosely coupled relationship between Subject and Observers where interaction isn’t dependent on specific implementation
+Observer Pattern represents a loosely coupled relationship between Subject and Observers where interaction isn't dependent on specific implementation
 
 The Subject relays the changed information to the Observers
 
-The Subject doesn’t need to know about the concrete class another Observer is, so long as it implements the Observer interface.
+The Subject doesn't need to know about the concrete class another Observer is, so long as it implements the Observer interface.
 
 Each kind of Observer may implement the update-method differently

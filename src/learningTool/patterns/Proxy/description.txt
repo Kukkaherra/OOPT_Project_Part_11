@@ -1,4 +1,4 @@
-“The Proxy Pattern provides a surrogate or placeholder for another object to control access to it.”
+"The Proxy Pattern provides a surrogate or placeholder for another object to control access to it."
 
 Proxy Patterns are used to create instance objects controlling access to other objects. Proxy Pattern consists of a subject interface, the real subject, and the proxy. The subject interface is an interface which is implemented by both the real subject and the proxy. The real subject is an object and it is interacted with through the proxy. The proxy controls also the access to the real subject. 
 
