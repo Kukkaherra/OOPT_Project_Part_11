@@ -1,5 +1,16 @@
 package learningTool;
 
+/**
+ * LUT OOPT, Spring 2017
+ * Authors:
+ * Jere Kaplas 0403105
+ * Sakari Laine 0418598
+ * Eetu Heimala 0388819
+ * Oskari Jahkola 0403082
+ */
+
+
+
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
