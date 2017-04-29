@@ -1,0 +1,4 @@
+Printing a Circle.
+The shape has a fill gradient with location: 40.
+Printing a Circle.
+The shape has (212, 128, 0) border.

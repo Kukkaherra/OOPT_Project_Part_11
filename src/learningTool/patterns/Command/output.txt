@@ -1,0 +1,6 @@
+Button was pressed
+Light is on.
+Button was pressed
+Cat is active.
+Button was pressed
+Door is open!

@@ -1,0 +1,5 @@
+Printing a Rectangle.
+Printing a Rectangle.
+The shape has a fill gradient with location: 40.
+Printing a Rectangle.
+The shape has a border with thickness of 40.
