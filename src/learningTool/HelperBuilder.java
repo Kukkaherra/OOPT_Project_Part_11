@@ -10,29 +10,26 @@ import org.w3c.dom.NodeList;
 
 public class HelperBuilder {
     
-    private Node root;
-    
-    public HelperBuilder(){
-        
-        try {
-            File fXmlFile = new File("src/learningTool/requirements.xml");
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(fXmlFile);
-            doc.getDocumentElement().normalize();
-            
-            root = doc.getDocumentElement();
-        } catch(Exception e) {
-            System.out.println(e);
-        }
-    }
-    
-    public Node getRoot() {
+	private Node root;
+	// Fetches all the requirements from an xml file. Used for the pattern chooser.
+	public HelperBuilder() {
+		try {
+			File fXmlFile = new File("src/learningTool/requirements.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+			doc.getDocumentElement().normalize();
+			root = doc.getDocumentElement();
+		} catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	public Node getRoot() {
 		return root;
 	}
-	
-    public PatternHelper parse(Node n) {
-		
+
+	public PatternHelper parse(Node n) {
 		Element elem = (Element) n;
 		PatternHelper ph;
 		//if root
@@ -41,8 +38,8 @@ public class HelperBuilder {
 		} else {
 			ph = new PatternComposite(elem.getElementsByTagName("requirement").item(0).getTextContent());
 		}
-		
-        NodeList nList = n.getChildNodes();
+
+		NodeList nList = n.getChildNodes();
 		for (int i = 0; i < nList.getLength(); i++) {
 			Node node = nList.item(i);
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
@@ -55,6 +52,5 @@ public class HelperBuilder {
 			}
 		}
 		return ph;
-    }
-	
+	}
 }
