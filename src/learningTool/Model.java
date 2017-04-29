@@ -48,7 +48,7 @@ public class Model {
 		selectedPattern = p;
 	}
 
-	public ArrayList getPatternList() {
+	public ArrayList<Pattern> getPatternList() {
 		return patterns;
 	}
 }

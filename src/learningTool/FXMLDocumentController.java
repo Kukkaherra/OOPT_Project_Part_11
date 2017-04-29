@@ -97,12 +97,19 @@ public class FXMLDocumentController implements Initializable {
 	}
 
 	@FXML
-	private void selectRequirement(MouseEvent event) {
+	private void selectRequirement(MouseEvent event) throws IOException {
 		Integer index = questionList.getSelectionModel().getSelectedIndex();
 		if (index != -1 && model.getSelectedHelper() != null) {
 			model.setSelectedHelper(model.getSelectedHelper().getChild(index));
 			updateHelper();
 			if (model.getSelectedHelper().getChildren().size() == 1) { // we've reached a leaf
+				for (Pattern p : model.getPatternList()) {
+					if (p.toString().contains(model.getSelectedHelper().getChild(0).getData())) {
+						patternList.getSelectionModel().select(p);
+						selectPattern();
+						break;
+					}
+				}	
 				model.setSelectedHelper(null); // Just to prevent user from going past the leaf node 
 			}
 		}
