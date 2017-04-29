@@ -12,14 +12,14 @@ public class Model {
 	private static Model instance = null;
 
 	ArrayList<Pattern> patterns = new ArrayList<>();
-	
+
 	public static Model getInstance() {
 		if (instance == null) {
 			instance = new Model();
 		}
 		return instance;
 	}
-	
+
 	private Model() {
 		PatternBuilder pb = new PatternBuilder();
 		patterns = pb.getPatterns();

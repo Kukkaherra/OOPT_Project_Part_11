@@ -2,15 +2,14 @@ package learningTool;
 
 import java.util.ArrayList;
 
-public class PatternComposite implements PatternHelper{
-	
+public class PatternComposite implements PatternHelper {
 	private String question;
 	ArrayList<PatternHelper> childNodes = new ArrayList<>();
 	
 	public PatternComposite(String question) {
 		this.question = question;
-	} 
-	
+	}
+
 	@Override
 	public String getData() {
 		return question;

@@ -15,7 +15,7 @@ public class DataTuple {
 	public String getFileName() {
 		return fileName;
 	}
-	
+
 	public String toString() {
 		return fileName + ": " + codeDescription;
 	}

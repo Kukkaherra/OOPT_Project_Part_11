@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 public class PatternBuilder {
 	ArrayList<Pattern> patterns = new ArrayList<>();
-	// fetches all the patterns from 
+	// fetches all the patterns from requirements xml file
 	public PatternBuilder() {
 		try {
 			File[] directories = new File("src/learningTool/patterns").listFiles(File::isDirectory);
@@ -34,7 +34,7 @@ public class PatternBuilder {
 			}
 		} catch (IOException eio) {
 			System.err.print(eio);
-		} 
+		}
 	}
 
 	public static String readFile(String path) {
@@ -46,7 +46,7 @@ public class PatternBuilder {
 		}
 		return content; 
 	}
-	
+
 	public ArrayList<Pattern> getPatterns() {
 		return patterns;
 	}

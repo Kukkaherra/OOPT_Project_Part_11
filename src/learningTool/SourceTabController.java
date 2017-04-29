@@ -12,9 +12,9 @@ public class SourceTabController implements Initializable {
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-			// TODO
+		// TODO
 	}
-	
+
 	public void setSource(String source) {
 		sourceCode.setText(source);
 	}
